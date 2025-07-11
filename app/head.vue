@@ -9,6 +9,7 @@
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@shabiqghazi" />
+    <meta title="Shabiq Ghazi Arkaan">
 
     <link rel="icon" type="image/png" href="/favicon.png" />
     <title>Shabiq Ghazi Arkaan</title>
