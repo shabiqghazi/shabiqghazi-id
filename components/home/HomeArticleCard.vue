@@ -1,29 +1,52 @@
 <template>
-  <div class="grid-rows-2">
-    <Card class="py-0 overflow-clip border-black/50">
-      <img :src="homeAboutImg" alt="" class="aspect-video object-cover" />
-      <CardContent class="px-3 gap-2 flex flex-col">
-        <p class="text-xs text-black/60">July 11th, 2025</p>
-        <NuxtLink href="/articles/1">
-          <h3 class="font-bold text-sm">
-            Lorem ipsum dolor sit amet consectetur.
-          </h3>
-        </NuxtLink>
-        <p class="text-sm text-black/70 line-clamp-2">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam
-          incidunt repellat eveniet, recusandae ut illo.
-        </p>
-      </CardContent>
-      <CardFooter class="px-3 pt-0 pb-3">
-        <NuxtLink href="/articles/1">
-          <Button
-            size="sm"
-            class="hover:cursor-pointer hover:bg-green-300 hover:text-black border-black border"
+  <div
+    class="grid-rows-2 first:col-span-1 first:md:col-span-2 first:lg:col-span-3 first:row-span-2 group p-2"
+  >
+    <Card
+      class="py-0 overflow-clip border-0 shadow flex flex-col group-first:md:relative gap-3 h-full"
+    >
+      <img
+        :src="homeAboutImg"
+        alt=""
+        class="aspect-video object-cover group-first:md:w-full group-first:md:h-full group-first:md:brightness-50"
+      />
+      <div class="flex flex-col gap-3 group-first:md:absolute bottom-0">
+        <CardContent class="px-3 gap-2 flex flex-col group-first:md:text-white">
+          <p class="text-xs ">July 11th, 2025</p>
+          <NuxtLink href="/articles/1">
+            <h3 class="font-bold text-sm">
+              Lorem ipsum dolor sit amet consectetur.
+            </h3>
+          </NuxtLink>
+          <p
+            class="text-sm line-clamp-2 group-first:md:line-clamp-5"
           >
-            Read more
-          </Button>
-        </NuxtLink>
-      </CardFooter>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,
+            suscipit. Quae impedit, nihil, doloribus optio eaque nisi ad
+            voluptatum id debitis iure beatae. Repellat commodi quis animi
+            blanditiis doloribus reiciendis ipsam optio accusantium recusandae
+            sequi nostrum debitis cumque dolore est ipsum similique
+            exercitationem consequuntur, pariatur qui minima? Omnis, eligendi
+            pariatur molestias animi nesciunt necessitatibus aperiam. Quas,
+            accusamus autem quam hic quos et velit repellendus aliquam aperiam
+            provident maiores quis dolores distinctio doloremque quia similique
+            fugiat ut, totam delectus est explicabo praesentium consectetur.
+            Harum a similique tenetur cum mollitia dignissimos, aperiam,
+            deserunt maiores perferendis consectetur vero temporibus suscipit
+            quia quis corrupti.
+          </p>
+        </CardContent>
+        <CardFooter class="px-3 pt-0 pb-3">
+          <NuxtLink href="/articles/1">
+            <Button
+              size="sm"
+              class="hover:cursor-pointer hover:bg-green-300 hover:text-black border-black border text-xs h-fit py-1"
+            >
+              Read more
+            </Button>
+          </NuxtLink>
+        </CardFooter>
+      </div>
     </Card>
   </div>
 </template>

@@ -1,37 +1,38 @@
 <template>
   <div
-    class="h-screen bg-neutral-50 grid grid-cols-1 md:grid-cols-2 items-center px-5 md:px-20 gap-20 relative overflow-clip"
+    class="bg-neutral-800 grid grid-cols-1 lg:grid-cols-2 items-center px-5 lg:pl-20 lg:pr-0 gap-20 relative overflow-clip py-32 lg:py-0"
   >
-    <div class="flex flex-col pb-56 md:pb-0 gap-8 font-light z-10">
-      <p class="text-lg font-mono">Hi, Friends!</p>
-      <p class="leading-loose font-mono">
-        I'm a <strong class="font-semibold">software developer</strong> with
-        <strong class="font-semibold">2+ years of experience</strong> who able to use
-        <strong class="font-semibold">variative tools and technologies</strong>,
-        expecially in Javascript, PHP, and Python Frameworks. I have ability to
-        <strong class="font-semibold">learn quickly</strong> and
-        <strong class="font-semibold">collaborate</strong> in teams.
+    <div class="flex flex-col lg:pb-0 gap-8 font-light z-10 text-white">
+      <p class="font-bold">Tentang saya</p>
+      <p class="leading-loose">
+        <strong class="font-semibold">Saya bukan siapa-siapa</strong>, saya
+        hanya yang ingin menjadi lebih baik dari hari kemarin. Saya percaya
+        <strong class="font-semibold">pertumbuhan lahir dari keheningan</strong
+        >, bukan kebisingan. Situs ini saya buat hanya untuk menyimpan hal-hal
+        yang <strong class="font-semibold">tidak ingin saya lupakan</strong>.
       </p>
       <div>
         <NuxtLink href="/about">
           <Button
             variant="default"
             size="lg"
-            class="flex gap-2 hover:gap-3 hover:cursor-pointer hover:bg-green-300 hover:text-black border border-black transition-all duration-200"
+            class="flex gap-2 hover:gap-3 bg-white text-black hover:cursor-pointer hover:bg-green-300 hover:text-black border border-neutral-300 transition-all duration-200"
           >
             <span>More About Me</span>
           </Button>
         </NuxtLink>
       </div>
     </div>
-    <div class="absolute md:static -right-4 bottom-20 flex flex-col items-center">
-      <img :src="homeAbout" alt="" class="w-96" />
+    <div
+      class="absolute lg:static right-0 bottom-0 top-0 left-0 flex flex-col items-center"
+    >
+      <img :src="homeAbout" alt="" class="w-full h-full object-cover brightness-50 lg:brightness-50" />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import homeAbout from "~/assets/images/undraw_hello_ccwj.svg";
+import homeAbout from "~/assets/images/home-about.jpeg";
 </script>
 
 <style></style>
