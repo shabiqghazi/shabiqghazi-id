@@ -18,20 +18,20 @@
       <p
         class="leading-16 lg:leading-20 scroll-m-20 text-4xl tracking-tight lg:text-5xl font-light"
       >
-        I'm
+        Halo, saya<br />
         <strong class="font-extrabold">
-          Shabiq<br />
+          Shabiq
           Ghazi Arkaan
         </strong>
       </p>
-      <p class="text-2xl font-light">Software Developer</p>
+      <p class="text-xl font-light italic">Quiet observer. Long-life learner</p>
       <div>
         <Button
           variant="outline"
           size="lg"
           class="border border-black flex gap-2 hover:gap-3 hover:cursor-pointer hover:bg-green-300 transition-all duration-200"
         >
-          <span>Let's Work Together</span>
+          <span>Hubungi Saya</span>
           <ArrowRight :size="16" />
         </Button>
       </div>

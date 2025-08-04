@@ -1,14 +1,16 @@
 <template>
-  <div>
-    <div v-if="pending">Loading...</div>
-    <div v-else-if="error">Error: {{ error }}</div>
-    <article v-else-if="about">
-      <h1>{{ about.title }}</h1>
+  <div class="min-h-screen py-20 md:px-20 px-5">
+    <article>
+      <h1 class="text-2xl font-bold my-40 text-center">
+        Tentang saya, Shabiq Ghazi Arkaan
+      </h1>
+      <AboutContent />
     </article>
   </div>
 </template>
 
 <script setup lang="ts">
+import AboutContent from "~/components/about/AboutContent.vue";
 import type { IStrapiAbout } from "~/types/strapi-about";
 
 const { getMediaUrl } = useStrapi();
