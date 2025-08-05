@@ -10,17 +10,15 @@
         alt=""
         class="aspect-video object-cover group-first:md:w-full group-first:md:h-full group-first:md:brightness-50"
       />
-      <div class="flex flex-col gap-3 group-first:md:absolute bottom-0">
+      <div class="flex flex-col gap-3 group-first:md:absolute bottom-0 group-first:md:p-4">
         <CardContent class="px-3 gap-2 flex flex-col group-first:md:text-white">
-          <p class="text-xs ">July 11th, 2025</p>
+          <p class="text-xs">July 11th, 2025</p>
           <NuxtLink href="/articles/1">
             <h3 class="font-bold text-sm">
               Lorem ipsum dolor sit amet consectetur.
             </h3>
           </NuxtLink>
-          <p
-            class="text-sm line-clamp-2 group-first:md:line-clamp-5"
-          >
+          <p class="text-sm line-clamp-2 group-first:md:line-clamp-5">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,
             suscipit. Quae impedit, nihil, doloribus optio eaque nisi ad
             voluptatum id debitis iure beatae. Repellat commodi quis animi
@@ -36,13 +34,15 @@
             quia quis corrupti.
           </p>
         </CardContent>
-        <CardFooter class="px-3 pt-0 pb-3">
-          <NuxtLink href="/articles/1">
+        <CardFooter class="px-0 pt-0 pb-3">
+          <NuxtLink href="/articles/1" class="">
             <Button
               size="sm"
-              class="hover:cursor-pointer hover:bg-green-300 hover:text-black border-black border text-xs h-fit py-1"
+              variant="link"
+              class="hover:cursor-pointer hover:text-green-400 text-green-500 group-first:text-green-300 text-xs h-fit py-1 flex hover:gap-2 items-center"
             >
-              Read more
+              <span> Read more </span>
+              <ArrowRight :size="12" />
             </Button>
           </NuxtLink>
         </CardFooter>
@@ -55,6 +55,7 @@ import Card from "../ui/card/Card.vue";
 import homeAboutImg from "~/assets/images/home-about.webp";
 import CardFooter from "../ui/card/CardFooter.vue";
 import Button from "../ui/button/Button.vue";
+import { ArrowRight } from "lucide-vue-next";
 </script>
 
 <style></style>
