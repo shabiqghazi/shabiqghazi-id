@@ -27,7 +27,7 @@
         </div>
       </div>
       <div class="flex flex-col gap-4">
-        <p class="text-lg font-bold">Subscribe</p>
+        <p class="text-lg font-bold">Sosial</p>
         <div class="flex flex-col gap-3 text-neutral-400">
           <NuxtLink
             href="mailto:sgarkaan02@gmail.com"
