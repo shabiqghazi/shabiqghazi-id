@@ -1,19 +1,19 @@
 <template>
-  <div>
-    <div v-if="articles">
-      <h1>List of Artikel</h1>
-      <ul v-if="articles?.length">
-        <li v-for="article in articles" :key="article?.id">
-          <NuxtLink
-            :to="`articles/${article?.slug}`"
-            class="text-blue-500 underline"
-            >{{ article?.title }}</NuxtLink
-          >
-        </li>
-      </ul>
-      <p v-else>*No article found</p>
+  <base-page-title
+    :page-title="pageData.pageTitle"
+    :page-breadcrumbs="pageData.pageBreadcrumbs"
+  />
+  <div class="md:px-20 px-5 flex py-20">
+    <div class="grow">
+      <div class="grid grid-cols-3">
+        <HomeArticleCard
+          v-for="value in ['', '', '', '', '', '', '', '', '', '']"
+        />
+      </div>
     </div>
-    <div v-else>Loading...</div>
+    <div class="flex flex-col">
+      <BaseSidebar />
+    </div>
   </div>
 </template>
 
@@ -32,4 +32,18 @@ const { data } = await useFetch<IStrapiArticle[]>(`/api/articles`, {
 const articles = computed(() => {
   return data.value;
 });
+
+const pageData = {
+  pageTitle: "Artikel",
+  pageBreadcrumbs: [
+    {
+      title: "Beranda",
+      route: "/",
+    },
+    {
+      title: "Artikel",
+      route: "/articles",
+    },
+  ],
+};
 </script>
