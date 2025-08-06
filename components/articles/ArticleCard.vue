@@ -1,24 +1,21 @@
 <template>
-  <div
-    class="grid-rows-2 first:col-span-1 first:md:col-span-2 first:lg:col-span-3 first:row-span-2 group"
-  >
     <Card
-      class="py-0 overflow-clip border-0 shadow flex flex-col group-first:md:relative gap-3 h-full"
+      class="py-0 overflow-clip border-0 shadow flex flex-col gap-3 h-full"
     >
       <img
         :src="homeAboutImg"
         alt=""
-        class="aspect-video object-cover group-first:md:w-full group-first:md:h-full group-first:md:brightness-50"
+        class="aspect-video object-cover"
       />
-      <div class="flex flex-col gap-3 group-first:md:absolute bottom-0 group-first:md:p-4">
-        <CardContent class="px-3 gap-2 flex flex-col group-first:md:text-white">
+      <div class="flex flex-col gap-3 ">
+        <CardContent class="px-3 gap-2 flex flex-col ">
           <p class="text-xs">July 11th, 2025</p>
           <NuxtLink href="/articles/1">
             <h3 class="font-bold text-sm">
               Lorem ipsum dolor sit amet consectetur.
             </h3>
           </NuxtLink>
-          <p class="text-sm line-clamp-2 group-first:md:line-clamp-5">
+          <p class="text-sm line-clamp-2">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,
             suscipit. Quae impedit, nihil, doloribus optio eaque nisi ad
             voluptatum id debitis iure beatae. Repellat commodi quis animi
@@ -39,7 +36,7 @@
             <Button
               size="sm"
               variant="link"
-              class="hover:cursor-pointer hover:text-green-400 text-green-500 group-first:text-green-300 text-xs h-fit py-1 flex hover:gap-2 items-center"
+              class="hover:cursor-pointer hover:text-green-400 text-green-500 text-xs h-fit py-1 flex hover:gap-2 items-center"
             >
               <span> Read more </span>
               <ArrowRight :size="12" />
@@ -48,7 +45,6 @@
         </CardFooter>
       </div>
     </Card>
-  </div>
 </template>
 <script setup lang="ts">
 import Card from "../ui/card/Card.vue";
