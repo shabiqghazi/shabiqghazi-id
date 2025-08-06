@@ -1,5 +1,9 @@
 <template>
-  <div class="min-h-screen py-20 md:px-20 px-5">
+  <base-page-title
+    :page-title="pageData.pageTitle"
+    :page-breadcrumbs="pageData.pageBreadcrumbs"
+  />
+  <div class="min-h-screen py-10 md:px-20 px-5">
     <article>
       <h1 class="text-2xl font-bold my-40 text-center">
         Tentang saya, Shabiq Ghazi Arkaan
@@ -20,6 +24,20 @@ const { data, pending, error } = await useFetch<IStrapiAbout>("/api/about");
 const about = computed(() => {
   return data.value;
 });
+
+const pageData = {
+  pageTitle: "Tentang",
+  pageBreadcrumbs: [
+    {
+      title: "Beranda",
+      route: "/",
+    },
+    {
+      title: "Tentang",
+      route: "/about",
+    },
+  ],
+};
 
 // SEO Meta
 useSeoMeta({

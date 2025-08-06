@@ -1,7 +1,7 @@
 <template>
   <nav
     id="navbar"
-    class="fixed w-full flex justify-between items-center md:px-20 px-5 h-20 z-20 transition-all duration-500 bg-white/60 backdrop-blur-xl"
+    class="fixed top-0 w-full flex justify-between items-center md:px-20 px-5 h-20 z-20 transition-all duration-500 bg-white/60 backdrop-blur-xl"
   >
     <div class="font-light">
       <a href="/"
