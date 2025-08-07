@@ -6,13 +6,16 @@
   <div class="md:px-20 px-5 flex flex-col lg:flex-row py-20">
     <div class="grow flex flex-col gap-8">
       <div class="grid grid-cols-3 gap-4">
-        <ArticleCard v-for="value in ['', '', '', '', '', '']" />
+        <template v-for="article in articles" :key="article.slug">
+          <ArticleCard :article="article" />
+        </template>
       </div>
       <Pagination
         v-slot="{ page }"
-        :items-per-page="10"
-        :total="30"
-        :default-page="1"
+        :items-per-page="meta?.pagination.pageSize ?? 6"
+        :total="meta?.pagination.total ?? 0"
+        :default-page="fetchParams.page"
+        @update:page="(page) => router.push(`?page=${page}`)"
       >
         <PaginationContent v-slot="{ items }">
           <PaginationPrevious />
@@ -39,34 +42,34 @@
   </div>
 </template>
 
-<script setup async lang="ts">
+<script setup lang="ts">
 import ArticleCard from "~/components/articles/ArticleCard.vue";
+import type { IStrapiCollectionResponse } from "~/types/strapi";
 import type { IStrapiArticle } from "~/types/strapi-article";
 
-// pages/blog/[slug].vue
-const { query } = useRoute();
+const route = useRoute();
+const router = useRouter();
 
-// Fetch article by slug with SSR
-const { data } = await useFetch<IStrapiArticle[]>(`/api/articles`, {
-  query,
-});
+const fetchParams = computed(() => ({
+  page: parseInt((route.query.page as string) ?? "1"),
+  pageSize: parseInt((route.query.pageSize as string) ?? "3"),
+}));
 
-// Get first article from response
-const articles = computed(() => {
-  return data.value;
-});
+const { data } = await useFetch<IStrapiCollectionResponse<IStrapiArticle>>(
+  `/api/articles`,
+  {
+    query: fetchParams,
+  }
+);
+
+const articles = computed(() => data.value?.data);
+const meta = computed(() => data.value?.meta);
 
 const pageData = {
   pageTitle: "Artikel",
   pageBreadcrumbs: [
-    {
-      title: "Beranda",
-      route: "/",
-    },
-    {
-      title: "Artikel",
-      route: "/articles",
-    },
+    { title: "Beranda", route: "/" },
+    { title: "Artikel", route: "/articles" },
   ],
 };
 </script>

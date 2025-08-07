@@ -13,7 +13,7 @@
     </div>
     <div class="lg:px-8 flex flex-col gap-4">
       <p class="font-bold">Artikel Terbaru</p>
-      <base-sidebar-article v-for="value in ['', '', '']" />
+      <base-sidebar-article />
     </div>
   </aside>
 </template>

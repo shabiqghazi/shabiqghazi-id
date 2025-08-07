@@ -41,7 +41,7 @@
               variant="link"
               class="hover:cursor-pointer hover:text-green-400 text-green-500 group-first:text-green-300 text-xs h-fit py-1 flex hover:gap-2 items-center"
             >
-              <span> Read more </span>
+              <span> Baca Selengkapnya </span>
               <ArrowRight :size="12" />
             </Button>
           </NuxtLink>

@@ -22,8 +22,8 @@
         <div class="flex flex-col gap-3 text-neutral-400">
           <NuxtLink href="/about">Tentang</NuxtLink>
           <NuxtLink href="/articles">Artikel</NuxtLink>
-          <NuxtLink href="/galeri">Galeri</NuxtLink>
-          <NuxtLink href="/galeri">Kontak</NuxtLink>
+          <NuxtLink href="/gallery">Galeri</NuxtLink>
+          <NuxtLink href="/contact">Kontak</NuxtLink>
         </div>
       </div>
       <div class="flex flex-col gap-4">
