@@ -19,7 +19,7 @@ import type { IStrapiAbout } from "~/types/strapi-about";
 
 const { getMediaUrl } = useStrapi();
 
-const { data, pending, error } = await useFetch<IStrapiAbout>("/api/about");
+const { data } = await useFetch<IStrapiAbout>("/api/about");
 
 const about = computed(() => {
   return data.value;

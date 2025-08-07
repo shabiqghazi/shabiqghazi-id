@@ -26,10 +26,10 @@
         </button>
       </div>
       <NuxtLink to="/" class="nav-link">Home</NuxtLink>
-      <NuxtLink to="/about" class="nav-link">About</NuxtLink>
-      <NuxtLink to="/articles" class="nav-link">Articles</NuxtLink>
-      <NuxtLink to="/gallery" class="nav-link">Gallery</NuxtLink>
-      <NuxtLink to="/contact" class="nav-link">Contact</NuxtLink>
+      <NuxtLink to="/about" class="nav-link">Tentang</NuxtLink>
+      <NuxtLink to="/articles" class="nav-link">Artikel</NuxtLink>
+      <NuxtLink to="/gallery" class="nav-link">Galeri</NuxtLink>
+      <NuxtLink to="/contact" class="nav-link">Kontak</NuxtLink>
     </div>
   </nav>
 </template>

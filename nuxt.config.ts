@@ -49,4 +49,11 @@ export default defineNuxtConfig({
   alias: {
     lucide: "lucide-vue-next",
   },
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: "id",
+      },
+    },
+  },
 });

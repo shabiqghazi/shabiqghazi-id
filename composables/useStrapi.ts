@@ -5,7 +5,6 @@ import { buildQuery } from "~/utilities/build-query.util";
 
 export const useStrapi = () => {
   const httpClient = getHttpClient();
-  const config = useRuntimeConfig();
 
   // Find single entry
   const findOneById = async <T = Any>(
@@ -31,15 +30,21 @@ export const useStrapi = () => {
   };
 
   // Get media URL helper
-  const getMediaUrl = (url: string): string => {
-    if (url.startsWith("http")) return url;
-    return `${config.public.apiMediaURL}${url}`;
-  };
+  function getMediaUrl(path: string) {
+    return `/api/image-proxy?url=${encodeURIComponent(path)}`;
+  }
+
+  function getStrapiSrcSet(formats: Record<string, Any>) {
+    return Object.values(formats)
+      .map((format) => `${getMediaUrl(format.url)} ${format.width}w`)
+      .join(", ");
+  }
 
   return {
     find,
     findOneById,
     buildQuery,
     getMediaUrl,
+    getStrapiSrcSet,
   };
 };

@@ -7,9 +7,7 @@ export default defineEventHandler(async (event) => {
   try {
     const response = await getArticles(query);
 
-    const { data } = response;
-
-    return data;
+    return response;
   } catch (error) {
     if (error instanceof Error) {
       throw error;

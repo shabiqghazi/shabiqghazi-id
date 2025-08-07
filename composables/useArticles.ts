@@ -19,7 +19,7 @@ export const useArticles = () => {
       pagination: {
         pageSize: params.pageSize,
         page: params.page,
-        withCount: false,
+        withCount: true,
       },
       filters: {
         $or: [
