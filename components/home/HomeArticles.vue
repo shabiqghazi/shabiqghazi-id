@@ -4,8 +4,10 @@
     class="flex flex-col items-center px-5 md:px-20 py-20 gap-20 justify-center"
   >
     <h2 class="font-bold text-4xl text-center">Artikel Terbaru</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-      <HomeArticleCard v-for="i in [1, 2, 3]" :key="i" />
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <template v-for="article in articles" :key="article.id">
+        <HomeArticleCard :article="article"  />
+      </template>
     </div>
     <NuxtLink href="/articles">
       <Button
@@ -18,5 +20,16 @@
     </NuxtLink>
   </section>
 </template>
+
+<script lang="ts" setup>
+import type { IStrapiCollectionResponse } from "~/types/strapi";
+import type { IStrapiArticle } from "~/types/strapi-article";
+
+const { data } = await useFetch<IStrapiCollectionResponse<IStrapiArticle>>(
+  `/api/articles/latest`
+);
+
+const articles = computed(() => data.value?.data);
+</script>
 
 <style></style>

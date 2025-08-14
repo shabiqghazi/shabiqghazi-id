@@ -1,6 +1,6 @@
 import { getHttpClient } from "~/lib/httpClient";
 import type { Any } from "~/types/global";
-import type { IStrapiQueryParams } from "~/types/strapi";
+import type { IStrapiFileVariant, IStrapiQueryParams } from "~/types/strapi";
 import { buildQuery } from "~/utilities/build-query.util";
 
 export const useStrapi = () => {
@@ -34,7 +34,7 @@ export const useStrapi = () => {
     return `/api/image-proxy?url=${encodeURIComponent(path)}`;
   }
 
-  function getStrapiSrcSet(formats: Record<string, Any>) {
+  function getStrapiSrcSet(formats: IStrapiFileVariant) {
     return Object.values(formats)
       .map((format) => `${getMediaUrl(format.url)} ${format.width}w`)
       .join(", ");
