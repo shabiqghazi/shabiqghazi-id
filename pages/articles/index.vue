@@ -5,7 +5,7 @@
   />
   <div class="md:px-20 px-5 flex flex-col lg:flex-row py-20 gap-20 lg:gap-0">
     <div class="grow flex flex-col gap-8">
-      <div class="grid grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         <template v-for="article in articles" :key="article.slug">
           <ArticleCard :article="article" />
         </template>

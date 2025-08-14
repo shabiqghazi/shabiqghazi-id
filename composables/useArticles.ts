@@ -45,6 +45,21 @@ export const useArticles = () => {
     );
   };
 
+  const getLatestArticles = () => {
+    const defaultParams: IStrapiQueryParams = {
+      populate: ["cover"],
+      sort: "publishedAt:desc",
+      pagination: {
+        limit: 3,
+      },
+    };
+
+    return find<IStrapiCollectionResponse<IStrapiArticle>>(
+      "articles",
+      defaultParams
+    );
+  };
+
   // Get single article by slug
   const getArticleBySlug = (slug: string) => {
     return find<IStrapiCollectionResponse<IStrapiArticle>>("articles", {
@@ -56,5 +71,6 @@ export const useArticles = () => {
   return {
     getArticles,
     getArticleBySlug,
+    getLatestArticles,
   };
 };
